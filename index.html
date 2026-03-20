@@ -3,68 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bức thư trong gió và Pháo hoa</title>
+    <title>Chúc Mừng Sinh Nhật Tuổi 20!</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Segoe UI', Tahoma, sans-serif; }
-        
-        /* SLIDE 1 */
-        #slide-1 {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);
-            transition: opacity 1s ease-in-out, visibility 1s; z-index: 10;
+        /* --- CÀI ĐẶT CHUNG --- */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        #slide-1.hide { opacity: 0; visibility: hidden; }
-        
-        #leaf-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
-        .leaf { position: absolute; font-size: 2rem; opacity: 0.8; animation: windBlow linear infinite; }
+
+        /* --- SLIDE 1 (NỀN XANH & LÁ BAY & LÁ THƯ) --- */
+        #slide-1 {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);
+            transition: opacity 1s ease-in-out, visibility 1s;
+            z-index: 10;
+        }
+
+        #slide-1.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #leaf-container {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+        }
+
+        .leaf {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.8;
+            animation: windBlow linear infinite;
+        }
+
         @keyframes windBlow {
             0% { transform: translate(-10vw, -10vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; } 90% { opacity: 1; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
             100% { transform: translate(110vw, 110vh) rotate(720deg); opacity: 0; }
         }
 
         #envelope-wrapper {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            text-align: center; cursor: pointer; z-index: 10;
-            animation: float 3s ease-in-out infinite; transition: all 0.3s ease;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            cursor: pointer;
+            z-index: 10;
+            animation: float 3s ease-in-out infinite;
+            transition: all 0.3s ease;
         }
+
         #envelope-wrapper:hover { transform: translate(-50%, -50%) scale(1.1); }
-        .envelope-icon { font-size: 100px; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2)); }
+
+        .envelope-icon {
+            font-size: 100px;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+        }
+
         .click-text {
             color: white; font-weight: bold; font-size: 1.2rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5); margin-top: -10px; animation: pulse 1.5s infinite;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5); margin-top: -10px;
+            animation: pulse 1.5s infinite;
         }
+
         @keyframes float { 0% { top: 50%; } 50% { top: 48%; } 100% { top: 50%; } }
         @keyframes pulse { 0% { opacity: 0.6; } 50% { opacity: 1; } 100% { opacity: 0.6; } }
 
+        /* --- NỘI DUNG LÁ THƯ (MODAL) --- */
         #letter-content {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8);
-            background-color: #fffdf5; padding: 40px; border-radius: 10px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3); width: 80%; max-width: 500px;
-            text-align: center; opacity: 0; visibility: hidden; transition: all 0.6s; z-index: 20;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background-color: #fffdf5;
+            padding: 40px; border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            width: 80%; max-width: 500px;
+            text-align: center;
+            opacity: 0; visibility: hidden;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 20;
         }
-        #letter-content.open { opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1); }
+
+        #letter-content.open {
+            opacity: 1; visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Thêm style cho Bánh kem và Số 20 */
+        .cake-icon {
+            font-size: 60px;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+        }
+
+        .age-number {
+            font-size: 70px;
+            font-weight: bold;
+            color: #e74c3c; /* Màu đỏ nổi bật */
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-family: 'Arial Black', Gadget, sans-serif;
+        }
+
         .letter-title { color: #2c7a2c; margin-bottom: 20px; font-size: 1.8rem; }
         .letter-body { color: #444; line-height: 1.7; font-size: 1.1rem; }
         
-        .btn-container { margin-top: 30px; display: flex; justify-content: center; gap: 15px; }
+        /* Cụm nút bấm trong thư */
+        .btn-container { margin-top: 30px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        
         .action-btn {
             padding: 12px 24px; border: none; border-radius: 5px;
-            cursor: pointer; font-size: 1rem; font-weight: bold; transition: all 0.3s;
+            cursor: pointer; font-size: 1rem; font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
         }
-        #surprise-btn { background-color: #e74c3c; color: white; box-shadow: 0 4px 10px rgba(231, 76, 60, 0.4); }
+        
+        #surprise-btn { 
+            background-color: #e74c3c; color: white; 
+            box-shadow: 0 4px 10px rgba(231, 76, 60, 0.4);
+        }
         #surprise-btn:hover { background-color: #c0392b; transform: scale(1.05); }
+        
         #close-btn { background-color: #56ab2f; color: white; }
         #close-btn:hover { background-color: #3e8e20; }
 
-        /* SLIDE 2 */
+        /* --- SLIDE 2 (NỀN ĐEN & PHÁO HOA) --- */
         #slide-2 {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: #000; z-index: 1; display: flex; justify-content: center; align-items: center;
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: #000; /* Nền đen hoàn toàn */
+            z-index: 1; /* Ban đầu nằm dưới slide 1 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        #canvas { position: absolute; width: 100%; height: 100%; }
-        #back-to-1-btn { position: absolute; bottom: 40px; background-color: #34495e; color: white; z-index: 100; }
+
+        /* Canvas cho pháo hoa phức tạp */
+        #canvas {
+            position: absolute;
+            width: 100%; height: 100%;
+        }
+
+        #back-to-1-btn {
+            position: absolute;
+            bottom: 40px;
+            background-color: #34495e; color: white;
+            z-index: 100; /* Đảm bảo nút nằm trên pháo hoa */
+        }
         #back-to-1-btn:hover { background-color: #2c3e50; }
+
     </style>
 </head>
 <body>
@@ -79,16 +174,23 @@
 
     <div id="slide-1">
         <div id="leaf-container"></div>
+
         <div id="envelope-wrapper" onclick="openLetter()">
             <div class="envelope-icon">✉️</div>
             <div class="click-text">Nhấn để mở</div>
         </div>
+
         <div id="letter-content">
-            <h2 class="letter-title">Gửi bạn,</h2>
+            <div class="cake-icon">🎂</div>
+            <div class="age-number">20</div>
+            
+            <h2 class="letter-title">Mừng bạn bước sang tuổi mới!</h2>
+            
             <div class="letter-body">
-                <p>Những chiếc lá mới đã đâm chồi, và cơn gió mang theo thông điệp này đến với bạn.</p>
-                <p>Chúc bạn một ngày thật bình yên và tràn đầy sức sống như mầm xanh này nhé!</p>
+                <p>Hai mươi - lứa tuổi đẹp nhất của thanh xuân, đầy hoài bão và khát vọng.</p>
+                <p>Chúc bạn một sinh nhật thật ý nghĩa, luôn giữ vững ngọn lửa nhiệt huyết và bước tiếp những chương mới thật rực rỡ nhé!</p>
             </div>
+            
             <div class="btn-container">
                 <button class="action-btn" id="surprise-btn" onclick="goToSlide2()">Tạo điều bất ngờ</button>
                 <button class="action-btn" id="close-btn" onclick="closeLetter()">Đóng lại</button>
@@ -102,6 +204,7 @@
     </div>
 
     <script>
+        // === TẠO HIỆU ỨNG LÁ BAY ===
         const leafContainer = document.getElementById('leaf-container');
         const leafEmojis = ['🍃', '🌿', '🌱']; 
         for (let i = 0; i < 25; i++) {
@@ -115,19 +218,20 @@
             leafContainer.appendChild(leaf);
         }
 
+        // === ĐIỀU KHIỂN THƯ & NHẠC ===
         const envelope = document.getElementById('envelope-wrapper');
         const letterContent = document.getElementById('letter-content');
         const slide1 = document.getElementById('slide-1');
         const pianoMusic = document.getElementById('piano-music');
         
-        let fireworksActive = false; 
+        let fireworksActive = false; // Cờ kiểm soát pháo hoa
 
         function openLetter() {
             envelope.style.opacity = '0';
             envelope.style.visibility = 'hidden';
             envelope.style.transform = 'translate(-50%, -50%) scale(0.5)';
             letterContent.classList.add('open');
-            pianoMusic.play().catch(() => {}); 
+            pianoMusic.play().catch(() => {}); // Chơi nhạc piano
         }
 
         function closeLetter() {
@@ -137,25 +241,32 @@
                 envelope.style.visibility = 'visible';
                 envelope.style.transform = 'translate(-50%, -50%) scale(1)';
             }, 400);
-            pianoMusic.pause(); 
-            pianoMusic.currentTime = 0;
+            pianoMusic.pause(); // Tắt nhạc
+            pianoMusic.currentTime = 0; // Reset nhạc về đầu
         }
 
+        // === CHUYỂN SLIDE VÀ PHÁO HOA ĐỒNG BỘ ÂM THANH ===
         function goToSlide2() {
+            // Ẩn slide 1 mượt mà
             slide1.classList.add('hide');
+            
+            // Chuyển nhạc
             pianoMusic.pause();
             pianoMusic.currentTime = 0;
             
+            // Kích hoạt pháo hoa
             fireworksActive = true;
             startFireworks();
         }
 
         function goBackToSlide1() {
+            // Hiện slide 1 mượt mà
             slide1.classList.remove('hide');
-            fireworksActive = false; 
-            closeLetter();
+            fireworksActive = false; // Tắt pháo hoa
+            closeLetter(); // Đóng thư lại
         }
 
+        // === SCRIPT CHO PHÁO HOA (Complex Fireworks with Sync Sound) ===
         function startFireworks() {
             const canvas = document.getElementById('canvas');
             const ctx = canvas.getContext('2d');
@@ -167,8 +278,9 @@
             const fireworks = [];
             const particles = [];
             let timerTick = 0;
-            let timerTotal = 15; // Ngưỡng thời gian chờ bắn pháo (sẽ thay đổi liên tục)
+            let timerTotal = 15; // Nhịp bắn pháo (giảm xuống để bắn nhanh hơn)
 
+            // Lấy sẵn đường link âm thanh để clone
             const soundUrl = document.getElementById('firework-pop').querySelector('source').src;
 
             function Firework(sx, sy, tx, ty) {
@@ -188,12 +300,14 @@
                 const vx = Math.cos(this.angle) * this.speed; const vy = Math.sin(this.angle) * this.speed;
                 this.distanceTraveled = Math.sqrt((this.sx - this.x) * (this.sx - this.x) + (this.sy - this.y) * (this.sy - this.y));
                 
+                // KHI PHÁO BAY TỚI ĐÍCH VÀ NỔ
                 if (this.distanceTraveled >= this.distanceToTarget) {
                     for (let i = 0; i < 80; i++) { particles.push(new Particle(this.tx, this.ty)); }
                     fireworks.splice(index, 1);
 
+                    // ĐỒNG BỘ ÂM THANH: Sử dụng New Audio để không bị lỗi cloneNode chặn trên một số trình duyệt
                     let popSound = new Audio(soundUrl);
-                    popSound.volume = 0.4; 
+                    popSound.volume = 0.5; // Chỉnh âm lượng tiếng nổ
                     popSound.play().catch(e => console.log("Trình duyệt chặn âm thanh: ", e));
 
                 } else { this.x += vx; this.y += vy; }
@@ -203,7 +317,7 @@
                 ctx.beginPath();
                 ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length - 1][1]);
                 ctx.lineTo(this.x, this.y);
-                ctx.strokeStyle = `hsla(30, 100%, ${this.brightness}%, .5)`; 
+                ctx.strokeStyle = `hsla(30, 100%, ${this.brightness}%, .5)`; /* Ánh vàng pháo hoa bùng lên */
                 ctx.lineWidth = 1; ctx.stroke(); ctx.closePath();
             }
 
@@ -212,7 +326,7 @@
                 this.coordinates = []; this.coordinateCount = 5;
                 while (this.coordinateCount--) { this.coordinates.push([this.x, this.y]); }
                 this.angle = random(0, Math.PI * 2); this.speed = random(1, 10);
-                this.friction = 0.95; this.gravity = 1; this.hue = random(10, 40); 
+                this.friction = 0.95; this.gravity = 1; this.hue = random(10, 40); /* Tone màu vàng đỏ lửa pháo */
                 this.brightness = random(50, 80); this.alpha = 1; this.decay = random(0.015, 0.03);
             }
 
@@ -232,28 +346,21 @@
             }
 
             function loop() {
-                if (!fireworksActive) return; 
+                if (!fireworksActive) return; // Dừng vẽ nếu đã quay lại thư
                 requestAnimationFrame(loop);
                 ctx.globalCompositeOperation = 'destination-out';
                 ctx.fillStyle = 'rgba(0, 0, 0, 0.5)'; ctx.fillRect(0, 0, canvas.width, canvas.height);
                 ctx.globalCompositeOperation = 'lighter';
-                
                 for (let i = fireworks.length - 1; i >= 0; i--) { fireworks[i].draw(); fireworks[i].update(i); }
                 for (let i = particles.length - 1; i >= 0; i--) { particles[i].draw(); particles[i].update(i); }
-                
-                // THAY ĐỔI: Sử dụng timerTotal ngẫu nhiên để bắn pháo
-                if (timerTick >= timerTotal) { 
+                if (timerTick >= timerTotal) { // Tạo pháo hoa mới
                     const sx = random(canvas.width / 3, canvas.width * 2 / 3);
                     const sy = canvas.height;
                     const tx = random(0, canvas.width);
                     const ty = random(0, canvas.height / 2);
                     fireworks.push(new Firework(sx, sy, tx, ty));
-                    
-                    timerTick = 0; // Reset bộ đếm
-                    timerTotal = random(5, 70); // Bốc thăm thời gian chờ mới (5 là rất nhanh, 70 là chậm)
-                } else { 
-                    timerTick++; 
-                }
+                    timerTick = 0;
+                } else { timerTick++; }
             }
             loop();
         }
