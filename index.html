@@ -195,13 +195,13 @@
         // ==========================================
         // HÀM MỞ LINK KHI NHẤN NÚT QUÀ ĐẶC BIỆT
         // ==========================================
-        function openSecretLink() {
-            // ĐIỀN ĐƯỜNG LINK CỦA BẠN VÀO DẤU NGOẶC KÉP BÊN DƯỚI
-            const linkCuaBan = "https://drive.google.com/file/d/1yQd2t46yuFvqQFG9PMHc2lQRYda5Gdn8/view?usp=sharing"; 
-            
-            // Lệnh mở tab mới
-            window.open(linkCuaBan, '_blank');
-        }
+   function openSecretLink() {
+    // 1. Thay đường link bạn muốn chuyển đến vào đây
+    const linkMoi = "https://drive.google.com/file/d/1yQd2t46yuFvqQFG9PMHc2lQRYda5Gdn8/view?usp=drive_link";
+    
+    // 2. Lệnh này sẽ mở link trong một tab mới
+    window.open(linkMoi, '_blank');
+}
 
         // Pháo hoa đồng bộ âm thanh
         function startFireworks() {
